@@ -3,14 +3,13 @@
     "description": "CodeIginter 3 Theme Based on Core UI and Ion Auth",
     "type": "codeigniter-module",
     "require": {
-        "coreui/coreui": "^4.0",
-        "twbs/bootstrap": "^4.0",
-        "datatables/datatables": "^1.10"
+        "andri-sudarmawijaya/theme-core-ui":"1.0.x-dev"
     },
     "authors": [
         {
             "name": "Steve Goodwin",
-            "url": "http://www.weblogics.co.uk"
+            "homepage": "http://www.weblogics.co.uk",
+            "role": "Owner"
         }
     ],
     "license": "MIT",
