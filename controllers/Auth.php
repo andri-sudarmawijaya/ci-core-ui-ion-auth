@@ -17,7 +17,7 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        redirect('/login');
+        redirect('/auth/login');
     }
 
     public function login()
@@ -58,7 +58,7 @@ class Auth extends CI_Controller
     public function logout()
     {
         if( $this->ion_auth->logout() )
-            redirect('/login');
+            redirect('/');
         else
             die("There was an error logging you out");
     }
