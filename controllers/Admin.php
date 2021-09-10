@@ -17,7 +17,7 @@ class Admin extends CI_Controller
             redirect('/login');
 
         if( ! $this->ion_auth_acl->has_permission('access_admin') )
-            redirect('/dashboard');
+            echo '1';//redirect('/dashboard');
     }
 
     public function index()
@@ -27,14 +27,14 @@ class Admin extends CI_Controller
 
     public function manage()
     {
-        $this->load->view('admin/manage');
+        $this->load->view('theme-core-ui/admin/manage');
     }
 
     public function permissions()
     {
         $data['permissions']    =   $this->ion_auth_acl->permissions('full');
 
-        $this->load->view('admin/permissions', $data);
+        $this->load->view('theme-core-ui/admin/permissions', $data);
     }
 
     public function add_permission()
@@ -51,7 +51,7 @@ class Admin extends CI_Controller
         {
             $data['message'] = ($this->ion_auth_acl->errors() ? $this->ion_auth_acl->errors() : $this->session->flashdata('message'));
 
-            $this->load->view('admin/add_permission', $data);
+            $this->load->view('theme-core-ui/admin/add_permission', $data);
         }
         else
         {
@@ -91,7 +91,7 @@ class Admin extends CI_Controller
             $data['message']    = ($this->ion_auth_acl->errors() ? $this->ion_auth_acl->errors() : $this->session->flashdata('message'));
             $data['permission'] = $permission;
 
-            $this->load->view('admin/edit_permission', $data);
+            $this->load->view('theme-core-ui/admin/edit_permission', $data);
         }
         else
         {
@@ -139,7 +139,7 @@ class Admin extends CI_Controller
         {
             $data['message'] = ($this->ion_auth_acl->errors() ? $this->ion_auth_acl->errors() : $this->session->flashdata('message'));
 
-            $this->load->view('/admin/delete_permission', $data);
+            $this->load->view('theme-core-ui/admin/delete_permission', $data);
         }
     }
 
@@ -147,7 +147,7 @@ class Admin extends CI_Controller
     {
         $data['groups'] = $this->ion_auth->groups()->result();
 
-        $this->load->view('/admin/groups', $data);
+        $this->load->view('theme-core-ui/admin/groups', $data);
     }
 
     public function group_permissions()
@@ -184,14 +184,14 @@ class Admin extends CI_Controller
         $data['permissions']            =   $this->ion_auth_acl->permissions('full', 'perm_key');
         $data['group_permissions']      =   $this->ion_auth_acl->get_group_permissions($group_id);
 
-        $this->load->view('/admin/group_permissions', $data);
+        $this->load->view('theme-core-ui/admin/group_permissions', $data);
     }
 
     public function users()
     {
         $data['users']  =   $this->ion_auth->users()->result();
 
-        $this->load->view('/admin/users', $data);
+        $this->load->view('theme-core-ui/admin/users', $data);
     }
 
     public function manage_user()
@@ -208,7 +208,7 @@ class Admin extends CI_Controller
         $data['user_groups']        =   $this->ion_auth->get_users_groups($user_id)->result();
         $data['user_acl']           =   $this->ion_auth_acl->build_acl($user_id);
 
-        $this->load->view('/admin/manage_user', $data);
+        $this->load->view('theme-core-ui/admin/manage_user', $data);
     }
 
     public function user_permissions()
@@ -250,7 +250,7 @@ class Admin extends CI_Controller
         $data['group_permissions']      =   $this->ion_auth_acl->get_group_permissions($user_groups);
         $data['users_permissions']      =   $this->ion_auth_acl->build_acl($user_id);
 
-        $this->load->view('/admin/user_permissions', $data);
+        $this->load->view('theme-core-ui/admin/user_permissions', $data);
     }
 
 }

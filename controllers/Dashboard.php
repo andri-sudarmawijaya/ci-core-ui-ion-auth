@@ -22,7 +22,7 @@ class Dashboard extends CI_Controller
         $data['users_groups']           =   $this->ion_auth->get_users_groups()->result();
         $data['users_permissions']      =   $this->ion_auth_acl->build_acl();
 
-        $this->load->view('admin/dashboard', $data);
+        $this->load->view('theme-core-ui/admin/dashboard', $data);
     }
 
 }
