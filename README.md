@@ -1,5 +1,5 @@
 # Ion Auth ACL
-### A handy access control list plugin for Ion Auth 2
+### A handy access control list plugin modifed for Ion Auth 3
 by [Steve Goodwin](https://uk.linkedin.com/pub/steve-goodwin/11/979/91a)
 
 Ben Edmunds did an amazing job at putting together a secure and well documented authentication system called Ion Auth, further to this I required a plugin which would work with this library and provide a full ACL (Access Control List) which add's a full permissions based layer below users groups.
@@ -11,7 +11,12 @@ Documentation is coming, I just thought i'd get a release out to get some feedba
 
 ## Installation
 
-First of all you'll need to grab a fresh install of codeigniter (v2.0.2 and above), you'll then need to grab a copy of Ben's Ion Auth and follow the install instructions for that (https://github.com/benedmunds/CodeIgniter-Ion-Auth).
+First of all you'll need to grab a fresh install of codeigniter (v3.1.11 and above), you'll then need to grab a copy of Ben's Ion Auth and follow the install instructions for that (https://github.com/benedmunds/CodeIgniter-Ion-Auth).
+
+or you can user this command:
+```
+composer create-project andri-sudarmawijaya/codeigniter-composer-installer codeigniter
+```
 
 Once you've got Ion Auth successfully integrated and working with your existing project or fresh install of CI then just grab this repo and overlay the files in their respective directories and install the sql/install.php with your favourite database editor.
 
@@ -20,6 +25,16 @@ Once you've got Ion Auth successfully integrated and working with your existing 
 CodeIgniter v3 requires the class names to be ucfirst().  In order to support this follow the standard installation procedures and then either rename the following files or create symlinks
 
 	models/ion_auth_acl_model.php         =>   models/Ion_auth_acl_model.php
+
+### Install this package
+```
+composer require andri-sudarmawijaya/ci-core-ui-ion-auth:1.0.x-dev
+```
+
+### Run the script
+```
+composer run-script post-update-cmd -d vendor/andri-sudarmawijaya/ci-core-ui-ion-auth
+```
 
 ## Usage
 
