@@ -1,0 +1,40 @@
+{
+    "name": "andri-sudarmawijaya/ci-core-ui-ion-auth",
+    "description": "CodeIginter 3 Theme Based on Core UI and Ion Auth",
+    "type": "codeigniter-module",
+    "require": {
+        "coreui/coreui": "^4.0",
+        "twbs/bootstrap": "^4.0",
+        "datatables/datatables": "^1.10"
+    },
+    "authors": [
+        {
+            "name": "Andri Sudarmawijaya",
+            "email": "andri.sudarmawijaya@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AndriSudarmawijaya\\CicoreuiIonauth\\": "src/"
+        }
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "AndriSudarmawijaya\\CicoreuiIonauth\\Installer::postInstall"
+        ],
+        "post-update-cmd": [
+            "AndriSudarmawijaya\\CicoreuiIonauth\\Installer::postUpdate"
+        ],
+        "post-autoload-dump": [
+            "AndriSudarmawijaya\\CicoreuiIonauth\\Installer::postAutoloadDump"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "compile": [{"php-method": "\\AndriSudarmawijaya\\CicoreuiIonauth\\Installer::postUpdate"}],
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
